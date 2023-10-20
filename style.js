@@ -7,9 +7,21 @@ const options = {
 };
 
 
+
+
 window.onload = function() {
   document.querySelector(".search-bar").focus();
 }
+
+
+document.querySelector('.to-top').addEventListener('click',function(){
+  window.scrollTo({
+    top:0,
+    behavior:'smooth'
+  })
+})
+
+
 
 
 function buttonClick () {
@@ -85,7 +97,18 @@ fetch('https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1', opti
 
   }).then(function(){
     buttonClick()
-  }) 
+
+  })
+
+  window.addEventListener('scroll',function(){
+    let totop = document.querySelector('.to-top')
+    let scroll = window.scrollY;
+    if(scroll < 400){
+      totop.style.right = '-1000px';
+    } else {
+      totop.style.right = '20px';
+    }
+  })
 
   .catch(err => console.error(err));
 
