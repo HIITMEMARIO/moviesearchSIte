@@ -8,12 +8,13 @@ const options = {
 
 
 
-
+// 사이트 로드시 커서 인풋에 위치하기
 window.onload = function() {
   document.querySelector(".search-bar").focus();
 }
 
 
+// 상단이동 버튼
 document.querySelector('.to-top').addEventListener('click',function(){
   window.scrollTo({
     top:0,
@@ -24,6 +25,7 @@ document.querySelector('.to-top').addEventListener('click',function(){
 
 
 
+// 버튼 클릭시 원하는 요소만 보이기
 function buttonClick () {
   let inputvalue = document.querySelector('.search-bar').value;  
   let movieTitle = document.querySelectorAll('.card1')
@@ -39,6 +41,7 @@ function buttonClick () {
   
 }
 
+// 엔터누를시 원하는 요소만 보이기
 function enterKey(){
   let input = document.querySelector('.search-bar') 
     input.addEventListener('keypress',function(e){
@@ -49,6 +52,7 @@ function enterKey(){
 
 }
 
+// 영화 데이터 가져오기 클릭시 영화 Id보이기
 fetch('https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1', options)
   .then(response => response.json())
   .then(response => {
@@ -100,6 +104,7 @@ fetch('https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1', opti
 
   })
 
+  // 상단이동 버튼 숨기기&보이기
   window.addEventListener('scroll',function(){
     let totop = document.querySelector('.to-top')
     let scroll = window.scrollY;
@@ -116,9 +121,3 @@ fetch('https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1', opti
 
 
 
-
-  
-  //   if(x.(document.querySelector('.moive-title').val())) {
-  //     console.log('hello')
-    
-  // }}

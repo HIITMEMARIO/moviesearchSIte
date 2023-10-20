@@ -49,6 +49,7 @@ img {
   width: 200px;
   height: 30px;
   outline: none;
+  font-weight: 300;
 }
 .nav .search .button {
   border-radius: 10px;
@@ -138,7 +139,6 @@ main .cards .card1 {
   border-radius: 10px;
   width: 300px;
   perspective: 600px;
-
 }
 
 .hidden {
@@ -201,7 +201,7 @@ footer .to-top{
 footer .to-top:hover{
   width: 51px;
   height: 51px;
-  background-color: #fff;
+  background-color: #fffdfa;
   color: black;
 }
 
